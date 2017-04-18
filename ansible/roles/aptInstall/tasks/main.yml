@@ -1,0 +1,6 @@
+- include_vars: softwares.yml
+
+- name: Install Softwares 
+  apt: name={{item}} state=present update_cache=yes
+  with_items: "{{ softwares }}"
+
